@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="discription" content="ユーザー覧画面" />
+	<link href="https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@400;500;700&display=swap" />
+	<title>ユーザ一覧画面</title>
+	<link rel="stylesheet" href="../static/css/reset.css">
+	<link rel="stylesheet" href="../static/css/User.css">
+</head>
+
+<body>
+	<h1 class="header__title">ユーザー覧画面</h1>
+	<div class="container">
+		<table class="keihiichirangamen" width="100%" border="1">
+			<thead class="title">
+				<td nowrap>ユーザーID</td>
+				<td nowrap>申請日</td>
+				<td nowrap>申請項目</td>
+				<td nowrap>申請金額</td>
+				<td nowrap>備考</td>
+				<td nowrap>登録日</td>
+			</thead>
+				<tr th:each="userList : ${userLists}" th:object="${userList}">
+					<td th:text="*{user_id}"></td>
+					<td th:text="*{name}"></td>
+					<td th:text="*{furigana}"></td>
+					<td th:text="*{mail}"></td>
+					<td th:text="*{password}"></td>
+					<td th:text="*{#dates.format(create_date, 'yyyy/MM/dd')}"></td>
+					<td ><button type="button" class="userList__edit--button"><a th:href="@{/{user_id}/edit(user_id=*{user_id})}" class="btn btn-secondary">編集</a></button></td>
+				</tr>
+		</table>
+	</div>
+	<div class="form__down">
+		<div class="container">
+			<div class="form__down--wrapper"></div>
+			<button class="returnButton" type="button" onclick="location.href='/mypage'">戻る</button>
+		</div>
+	</div>
+</body>
+
+</html>
