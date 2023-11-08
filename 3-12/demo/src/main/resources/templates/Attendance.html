@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>出勤登録</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/reset.css}">
+    <link rel="stylesheet" th:href="@{/css/Common.css}">
+</head>
+
+
+<body class="attendance__body">
+    <header>
+        <h1 class="header__title">出勤登録</h1>
+    </header>
+    <section class="form">
+        <div class="container">
+        <div th:if = "${validationError}" th:each = "error: ${validationError}">
+        	<label th:text = "${error}"></label>
+        	<div th:if = "${validationError}"></div>
+        </div>
+            <form th:action="@{/attendance/create}" th:method="post">
+                <dl class="from__list">
+                    <div class="form__up">
+                        <div class="form__item attendance_id">
+                            <dd>
+                                <label for="attendance_id">出勤ID</label>
+                            </dd>
+                            <dt>
+                                <input type="text" id="attendance_id" name="attendance_id" placeholder="自動でidを作成致します" disabled >
+                            </dt>
+                        </div>
+                        <div class="form__item user_id">
+                            <dd>
+                                <label for="user_id">ユーザーID</label>
+                            </dd>
+                            <dt>
+                                <input type="text" id="user_id" name="user_id" >
+                            </dt>
+                        </div>
+                        <div class="form__item attendance_date">
+							<dd>
+								<label for="attendance_date">更新日</label>
+							</dd>
+							<dt>
+								<input class="attendance_date_input" type="date" id="attendance_date" name="attendance_date">
+							</dt>
+						</div>
+                    </div>
+                    <div class="form__down">
+                        <div class="container">
+                            <div class="form__down--wrapper">
+                                <button type="button" onclick="location.href='/mypage'" class="returnButton">戻る</button>
+                                <button class="registerButton" type="submit" value = "登録" >登録</button>
+                            </div>
+                        </div>
+                    </div>
+                </dl>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
