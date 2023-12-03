@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--------------------スライダー見た目-------------------------------------------------->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+    />
+    <!------------------------------------------------------------------------------------->
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>My Work</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="header__container">
+          <h1 class="header header__left">My Work</h1>
+          <ul class="header__right">
+            <li><a href="#about">About</a></li>
+            <li><a href="#Works">Works</a></li>
+            <li><a href="#News">News</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+          <div class="header__icon">
+            <img src="/img/アイコン.png" alt="アイコン" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- slider -->
+    <section class="slider">
+      <div class="slider__img"><img src="./img/スライダー画像1.png" /></div>
+      <div class="slider__img"><img src="./img/スライダー画像2.png" /></div>
+      <div class="slider__img"><img src="./img/スライダー画像3.png" /></div>
+    </section>
+    <!-- about -->
+    <div class="about section" id="about">
+      <div class="container">
+        <div class="about__title title">About</div>
+        <div class="about__container">
+          <div class="about__sub--title">Xxxxx Ashley</div>
+          <div class="about__overview">
+            <span
+              >2th Floor xxxx Buliding x-x-x- Nishiazabu, Minato-ku, Tokyo
+              106-0031 Japan</span
+            ><br />
+            <span>tel: 000-0000-0000</span><br />
+            <span>url: www.xxxxxx.jp</span><br />
+            <span>mail: xxx@xxxxxx.jp</span>
+          </div>
+          <div class="about__text">
+            プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト<br />
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキ<br />
+            テキストテキストテキストテキストテキストテキスト
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Works -->
+    <section class="Works section" id="Works">
+      <div class="container">
+        <div class="Works__title title">Works</div>
+        <div class="Works__up">
+          <img src="/img/画像1.png" alt="画像1" class="zoom" />
+          <img src="/img/画像2.png" alt="画像2" class="zoom" />
+          <img src="/img/画像3.png" alt="画像3" class="zoom" />
+        </div>
+        <div class="Works__down">
+          <img src="/img/画像4.png" alt="画像4" class="zoom" />
+          <img src="/img/画像5.png" alt="画像5" class="zoom" />
+          <img src="/img/画像6.png" alt="画像6" class="zoom" />
+        </div>
+      </div>
+    </section>
+    <!-- Zoom -->
+    <div id="zoomback">
+      <img id="zoomimg" src="./img/画像1.png" />
+    </div>
+    <!-- News -->
+    <div class="News section" id="News">
+      <div class="container">
+        <div class="news__title title">News</div>
+        <ul>
+          <li class="news__items">
+            <div class="news__item">
+              <p>2020.xx.xx</p>
+              <p>デザイン雑誌「xxxxxx vol.11」に掲載していただきました。</p>
+            </div>
+          </li>
+          <li>
+            <div class="news__item">
+              <p>2020.xx.xx</p>
+              <p>xx月xx日から写真集「xxxxxx」の販売を開始します。</p>
+            </div>
+          </li>
+          <li>
+            <div class="news__item">
+              <p>2019.xx.xx</p>
+              <p>
+                【イベント開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="news__item">
+              <p>2019.xx.xx</p>
+              <p>デザイン雑誌「xxxxxx vol.10」に掲載していただきました。</p>
+            </div>
+          </li>
+          <li>
+            <div class="news__item">
+              <p>2019.xx.xx</p>
+              <p>
+                【個展開催のお知らせ】テキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- contact -->
+    <section class="contact section" id="Contact">
+      <div class="container">
+        <div class="contact__title title">Contact</div>
+        <form action="#">
+          <div class="contact__item--name">
+            <label for="name">NAME</label>
+            <input id="name" type="text" />
+          </div>
+          <div class="contact__item--email">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" />
+          </div>
+          <div class="contact__item--message">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" cols="30" rows="10"></textarea>
+          </div>
+          <button type="submit" class="contact__item--button">送信</button>
+        </form>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <div class="container">©️2020 My Work</div>
+    </footer>
+    <!--------------------jQuery----------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!------------------------------------------------------------------------------------->
+    <!--------------------スライダー動作----------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!------------------------------------------------------------------------------------->
+    <script src="./js/Test.js"></script>
+  </body>
+</html>
