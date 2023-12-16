@@ -1,0 +1,59 @@
+⚫️課題5-1～5-5
+
+【課題】
+①
+TemplateInputException
+NumberFormatException
+ClassCastException
+NullPointerException
+IndexOutOfBoundsException
+ArithmeticException
+
+
+6つのエラーが邪魔して機能していないのでCRAD機能とバリデーション、各画面遷移が
+正常に行えるようにしてください
+
+
+②TemplateInputExceptionの原因と原因箇所と修正内容を説明してください
+原因：{}の入れ忘れ
+原因箇所：「view.html」の５行目の「scripts = ~::script」
+修正内容；「scripts = ~::script」→「scripts = ~{::script}」
+
+
+③NumberFormatExceptionの原因と原因箇所と修正内容を説明してください
+原因：stringクラスをインスタンス化した「name」をint型に変換しようとしているため
+原因箇所：「UserController.java」の８１行目の「int User = Integer.parseInt(name);」
+修正内容：８０、８１行目は不要なコードなため削除
+
+
+④ClassCastExceptionの原因と原因箇所と修正内容を説明してください
+原因：「name」がString型なのに対して、Integer型にキャストしようとしたため
+原因箇所：「UserController.java」の68行目の「Integer logName = (Integer) name;」
+修正内容：下記のコードのように、if文を組む。
+P1で「name」がInteger型と一致するかチェック。
+trueであれば、キャストを実行する。
+falseであれば、キャストはせずに、「キャストに失敗するため処理を回避しました」の文言をprintするように修正。
+【P1】if(name instanceof Integer) {
+	    Integer logName = (Integer) name;
+	    System.out.println("ログ出力：登録ユーザー名は"+logName);
+【P2】		}else {	
+			System.out.println("キャストに失敗するため処理を回避しました");
+		}
+
+
+⑤NullPointerExceptionの原因と原因箇所と修正内容を説明してください
+原因：nullのEntityからgetIdしているため
+原因箇所：「UserController.java」の１１３行目の「userUpdateRequest = null;」
+修正内容；「userUpdateRequest = null;」を削除する
+
+
+⑥IndexOutOfBoundsExceptionの原因と原因箇所と修正内容を説明してください
+原因：負の値で配列にアクセスしたため
+原因箇所：「UserController.java」の３６行目の「userlist.get(-2)」で引数の対象外の-２を入れているため。
+修正内容：「userlists.add(userlist.get(-2));」→「userlists.add(userlist.get(i));」
+
+
+⑦ArithmeticExceptionの原因と原因箇所と修正内容を説明してください
+原因：１０÷３を計算して、「BigDecimalクラス」を使用しているため割り切れないため
+原因箇所：「UserController.java」の１１１行目の「BigDecimal id3 = id1.divide(id2;」
+修正内容：「UserController.java」の１１１行目の「BigDecimal id3 = id1.divide(id2;」→「BigDecimal id3 = id1.divide(id2, 1, BigDecimal.ROUND_HALF_UP);」
